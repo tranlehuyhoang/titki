@@ -6,7 +6,6 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "tiki";
-
 // Tạo kết nối tới cơ sở dữ liệu
 $conn = new mysqli($servername, $username, $password, $dbname, 3309);
 
@@ -14,6 +13,8 @@ $conn = new mysqli($servername, $username, $password, $dbname, 3309);
 if ($conn->connect_error) {
     die("Kết nối tới cơ sở dữ liệu thất bại: " . $conn->connect_error);
 }
+mysqli_set_charset($conn, "utf8");
+
 if (isset($_SESSION['phone'])) {
     $phone = $_SESSION['phone'];
 
@@ -186,4 +187,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['orderid'])) {
         }
     }
 }
+$conn->close();
 ?>

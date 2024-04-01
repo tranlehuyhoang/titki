@@ -76,8 +76,8 @@ if (isset($_SESSION['phone'])) {
                                                 <div data-v-6eb58c04="" class=" fz12 col-acc mg-lef10"> TIKI </div>
                                             </div>
                                             <div data-v-6eb58c04=""
-                                                class="fz16 col-055 ellipsis-1 mg-tp10 mg-btm10 font-wgh"> váy yếm lụa
-                                                dáng dài 3 màu xinh xắn </div>
+                                                class="fz16 col-055 ellipsis-1 mg-tp10 mg-btm10 font-wgh">
+                                                <?php echo $row['name']; ?> </div>
                                             <div data-v-6eb58c04="" class="footer-block">
                                                 <div data-v-6eb58c04="" class="img-box"><img data-v-6eb58c04=""
                                                         src="<?php echo $row['image']; ?>" alt=""></div>
