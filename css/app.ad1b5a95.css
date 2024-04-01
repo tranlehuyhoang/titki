@@ -9652,7 +9652,7 @@ ul {
     margin-left : auto;
     margin-right: auto;
     position    : relative;
-    overflow    : hidden;
+    overflow-x  : scroll;
     z-index     : 1
 }
 

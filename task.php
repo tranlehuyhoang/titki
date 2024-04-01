@@ -137,13 +137,13 @@
                                 </div>
                             </div>
                             <div class="btn-box">
-                                <div class="notAllow btn" style="line-height: 30px;">
+                                <a href="./order.php" class="notAllow btn" style="line-height: 30px;">
                                     <div>
                                         <font style="vertical-align: inherit;">
                                             <font style="vertical-align: inherit;">Nhận ngay</font>
                                         </font>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                         <div class="footer-box">
