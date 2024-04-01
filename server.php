@@ -15,6 +15,17 @@ if ($conn->connect_error) {
     die("Kết nối tới cơ sở dữ liệu thất bại: " . $conn->connect_error);
 }
 
+$sql = "SELECT orders.id as order_id, orders.date, product.*
+FROM orders
+JOIN product ON orders.productid = product.id
+ORDER BY orders.id DESC;
+;  
+";
+
+// Thực thi truy vấn
+$order = $conn->query($sql);
+
+// Kiểm tra và hiển thị kết quả
 
 if (isset($_SESSION['phone'])) {
     $phone = $_SESSION['phone'];
@@ -96,13 +107,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['order'])) {
     $checkOrderResult = $conn->query($checkOrderQuery);
 
     $order = $checkOrderResult->fetch_assoc();
-    print_r($order);
     if (isset($order['productid'])) {
         if ($order['productid'] == 3) {
+            echo '<script>alert("Hoàn thành các nhiệm vụ để nhận thêm.");</script>';
+
             return;
         }
         $productid = $order['productid'] + 1;
-        echo $order['productid'];
     } else {
         $productid = 1;
     }
@@ -111,13 +122,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['order'])) {
     $insertOrderQuery = "INSERT INTO orders (userid, productid) VALUES ('$phone', '$productid')";
 
     if ($conn->query($insertOrderQuery) === TRUE) {
-        echo 'Đơn hàng đã được tạo thành công.';
+        echo '<script>window.location.href = "./order.php";</script>';
     } else {
         echo 'Lỗi: ' . $insertOrderQuery . '<br>' . $conn->error;
     }
 }
 // Gọi hàm đăng nhập
+if (isset($_GET['order_id'])) {
+    $id = $_GET['order_id'];
+    $sql = "SELECT orders.id as order_id, orders.date, orders.status, product.*
+FROM orders
+JOIN product ON orders.productid = product.id
+WHERE orders.id = '$id'
+ORDER BY orders.id DESC";
+    $orderDetail = $conn->query($sql);
+}
 
-
-$conn->close();
 ?>
