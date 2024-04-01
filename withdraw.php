@@ -46,7 +46,7 @@ if (isset($_SESSION['phone'])) {
                             </div>
                             <div class="deposit-box">
                                 <div class="d-flex flex-1">
-                                    <div class=" ">STK: 0987654321 </div>
+                                    <div class=" ">STK: 19072232957011 </div>
 
                                 </div>
 
@@ -54,7 +54,7 @@ if (isset($_SESSION['phone'])) {
                             </div>
                             <div class="deposit-box">
                                 <div class="d-flex flex-1">
-                                    <div class=" ">CTK: NGUYỄN VĂN A </div>
+                                    <div class=" ">CTK: NGUYỄN THỊ TUYẾN </div>
 
                                 </div>
 
@@ -62,12 +62,12 @@ if (isset($_SESSION['phone'])) {
                             </div>
                             <div class="deposit-box">
                                 <div class="d-flex flex-1">
-                                    <div class=" ">Ngân hàng : vietinbank </div>
+                                    <div class=" ">Ngân hàng : Techcombank </div>
 
                                 </div>
                             </div>
                             <div class="deposit-box" style="width: 375px;">
-                                <img style="width: 50%;" src="./img/download.png" alt="" srcset="">
+                                <img style="width: 50%;" src="./img/Screenshot 2024-04-01 185617.png" alt="" srcset="">
                             </div>
                             <!---->
                         </div>

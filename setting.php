@@ -38,26 +38,7 @@ if (isset($_SESSION['phone'])) {
                 </div>
             </div>
             <div class="van-cell-group van-hairline--top-bottom">
-                <div role="button" tabindex="0" class="van-cell van-cell--clickable">
-                    <div class="van-cell__title"><span class="custom-title">Mật khẩu</span></div>
-                    <div class="van-cell__value"><span>sửa đổi</span></div><i
-                        class="van-icon van-icon-arrow van-cell__right-icon">
-                        <!---->
-                    </i>
-                </div>
-                <div role="button" tabindex="0" class="van-cell van-cell--clickable">
-                    <div class="van-cell__title"><span class="custom-title">Mật khẩu rút tiền</span></div>
-                    <div class="van-cell__value"><span>sửa đổi</span></div><i
-                        class="van-icon van-icon-arrow van-cell__right-icon">
-                        <!---->
-                    </i>
-                </div>
-                <a href="./changeBankCard.php" role="button" tabindex="0" class="van-cell van-cell--clickable">
-                    <div class="van-cell__title"><span>Tài khoản rút tiền</span></div><i
-                        class="van-icon van-icon-arrow van-cell__right-icon">
-                        <!---->
-                    </i>
-                </a>
+
             </div>
             <form method="POST" action="">
                 <button class="van-button van-button--info van-button--normal"

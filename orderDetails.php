@@ -73,7 +73,7 @@ if (isset($_SESSION['phone'])) {
                             </div>
                             <div class="d-flex flex-align-center flex-justify-between line-ht money-item">
                                 <div class="fz16 col-0c5">Thời gian nhận</div>
-                                <div class="fz16 col-fa0"> <?php echo ($row['date']); ?></div>
+                                <div class="fz16 col-fa0"></div>
                             </div>
                             <div class="d-flex flex-align-center flex-justify-between line-ht money-item">
                                 <div class="fz16 col-0c5">Trạng thái đặt hàng</div>
@@ -82,15 +82,21 @@ if (isset($_SESSION['phone'])) {
                             </div>
                         </div>
                     </div>
-                    <div class="btn-box " style="display:   <?php echo $row['status'] == 1 ? "none" : "flex"; ?>  ;">
-                        <div class="btn" style="line-height: 30px;">
-                            <font style="vertical-align: inherit;">
+                    <form action="" method="post" name="checkout" enctype="multipart/form-data">
+                        <input type="number" hidden name="orderid" value="<?php echo ($row['order_id']); ?>">
+                        <input type="number" hidden name="productid" value="<?php echo ($row['id']); ?>">
+                        <input type="number" hidden name="commission" value="<?php echo ($row['commission']); ?>">
+                        <div class="btn-box "
+                            style="display:   <?php echo $row['status'] == 1  ? "none" : "flex"; ?>  ;">
+                            <button class="btn" type="submit" style="line-height: 30px;">
                                 <font style="vertical-align: inherit;">
-                                    <div>Gửi đơn</div>
+                                    <font style="vertical-align: inherit;">
+                                        <div>Gửi đơn</div>
+                                    </font>
                                 </font>
-                            </font>
+                            </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div> <?php
                         }

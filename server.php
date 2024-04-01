@@ -14,16 +14,20 @@ $conn = new mysqli($servername, $username, $password, $dbname, 3309);
 if ($conn->connect_error) {
     die("Kết nối tới cơ sở dữ liệu thất bại: " . $conn->connect_error);
 }
+if (isset($_SESSION['phone'])) {
+    $phone = $_SESSION['phone'];
 
-$sql = "SELECT orders.id as order_id, orders.date, product.*
-FROM orders
-JOIN product ON orders.productid = product.id
-ORDER BY orders.id DESC;
-;  
-";
+    $sql = "SELECT orders.id as order_id, orders.date,orders.status, product.*
+    FROM orders
+    JOIN product ON orders.productid = product.id
+    where orders.userid = '$phone'
+    ORDER BY orders.id DESC   
+    ;  
+    ";
+    $order = $conn->query($sql);
+}
 
 // Thực thi truy vấn
-$order = $conn->query($sql);
 
 // Kiểm tra và hiển thị kết quả
 
@@ -138,4 +142,48 @@ ORDER BY orders.id DESC";
     $orderDetail = $conn->query($sql);
 }
 
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['orderid'])) {
+    $phone = $_SESSION['phone'];
+    $orderid = $_POST['orderid'];
+    $productid = $_POST['productid'];
+    $commission = $_POST['commission'];
+
+    // Assuming you have a table called 'user' to store user information
+    $balanceSql = "SELECT balance FROM user WHERE phone = '$phone'";
+    $balanceResult = $conn->query($balanceSql);
+
+    if ($balanceResult->num_rows > 0) {
+        $balanceRow = $balanceResult->fetch_assoc();
+        $balance = $balanceRow['balance'];
+
+        if ($balance < 50000) {
+            // Assuming there is a 'status' column in the 'orders' table
+            if ($productid != 3) {
+                $updateSql = "UPDATE orders SET status = 1 WHERE id = '$orderid'";
+                $updateResult = $conn->query($updateSql);
+                if ($updateResult === true) {
+                    // Update successful
+                    echo '<script>window.location.href = "./order.php";</script>';
+
+                    // Update the balance of the user
+                    $newBalance = $balance + $commission;
+                    $updateBalanceSql = "UPDATE user SET balance = $newBalance WHERE phone = '$phone'";
+                    $updateBalanceResult = $conn->query($updateBalanceSql);
+                    if ($updateBalanceResult === true) {
+                        // Balance update successful
+                    } else {
+                        // Balance update failed
+                    }
+                } else {
+                    // Update failed
+                    echo "Failed to update order.";
+                }
+            } else {
+                // Productid is 3, display error message
+                echo '<script>alert("Không đủ số dư để nhận nhiệm vụ.");</script>';
+            }
+        }
+    }
+}
 ?>

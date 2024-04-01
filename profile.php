@@ -89,64 +89,13 @@ if (isset($_SESSION['phone'])) {
                                             <font style="vertical-align: inherit;">Nạp tiền</font>
                                         </font>
                                     </a>
-                                    <a href="./deposit.php" class="btn">
+                                    <a class="btn" onclick="alert('Yêu cầu số dư trên 50000')">
                                         <font style="vertical-align: inherit;">
                                             <font style="vertical-align: inherit;">Rút tiền</font>
                                         </font>
                                     </a>
                                 </div>
-                                <div class="text-block">
-                                    <div>
-                                        <div class="fz12 col-055 mg-btm5">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Đơn hàng hôm nay</font>
-                                            </font>
-                                        </div>
-                                        <div class="fz18 col-f96">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">2</font>
-                                            </font>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="fz12 col-055 mg-btm5">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Hoa hồng hôm nay</font>
-                                            </font>
-                                        </div>
-                                        <div class="fz18 col-f96 text-rgt">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">1,174 VND</font>
-                                            </font>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-block">
-                                    <div>
-                                        <div class="fz12 col-055 mg-btm5">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Tất cả đơn hàng</font>
-                                            </font>
-                                        </div>
-                                        <div class="fz18 col-f96">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">3</font>
-                                            </font>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="fz12 col-055mg-btm5">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Tổng hoa hồng</font>
-                                            </font>
-                                        </div>
-                                        <div class="fz18 col-f96 text-rgt">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">0 VND</font>
-                                            </font>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="item-block">
                                 <div class="block-title">
