@@ -1,3 +1,8 @@
+<?php session_start();
+if (!isset($_SESSION['phone'])) {
+} else {
+    echo '<script>window.location.href = "./";</script>';
+}; ?>
 <?php include_once('./server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,9 +59,7 @@
                     </div>
                 </form>
             </div>
-            <div class="leftreturn"><i class="van-icon van-icon-arrow-left" style="font-size: 30px;">
-                    <!---->
-                </i></div>
+
         </div>
         <div></div>
     </div>

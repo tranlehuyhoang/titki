@@ -1,3 +1,9 @@
+<?php session_start();
+if (isset($_SESSION['phone'])) {
+} else {
+    echo '<script>window.location.href = "./login.php";</script>';
+}; ?>
+<?php include_once('./server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +20,8 @@
     <div id="app" class="QYZX">
         <div style="overflow: hidden; height: 100%;">
             <div class="van-overlay" style="display: none;">
-                <div class="van-loading van-loading--spinner" style="margin-top: calc(-100px + 50vh);"><span class="van-loading__spinner van-loading__spinner--spinner"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+                <div class="van-loading van-loading--spinner" style="margin-top: calc(-100px + 50vh);"><span
+                        class="van-loading__spinner van-loading__spinner--spinner"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
                 </div>
                 <p style="margin-top: 20px; color: rgb(255, 255, 255); font-size: 18px;"> Tạo lệnh... </p>
             </div>
@@ -26,7 +33,8 @@
                 </div>
             </div>
             <div class="main" style="overflow: hidden auto; height: calc(100% - 100px); margin-top: 45px;">
-                <div class="task-main" style="background-image: url(&quot;./img/task_bg.e98bdee7.png&quot;); background-size: 100%; background-repeat: no-repeat;">
+                <div class="task-main"
+                    style="background-image: url(&quot;./img/task_bg.e98bdee7.png&quot;); background-size: 100%; background-repeat: no-repeat;">
                     <div class="main-top">
                         <div class="flex-1 line-ht">
                             <div class="fz12">
@@ -119,31 +127,43 @@
                                         <font style="vertical-align: inherit;">
                                             <font style="vertical-align: inherit;">Cấp độ thành viên：VIP1</font>
                                         </font>
-                                    </div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAB3klEQVRYR+3Wy07CQBQG4P8Ud0KfwMQHkcveldKaYCKi0bjVRzFujZd4i9HC3iVtfBGNL1C6hWOGSIS2QzqdUlh01tPp1//MmSlhxQetuA8FULdCRYJFgroJ6D6/Enuw7DZtEF0CGBqMM7/e/Zh82NKBpmsdMHAPoCRQTPgKat3NlQCGcWMg4ydodDeWDjS9ZpuZ7ibJ/YGGDG4F9Z6zVKAMR8THfq33ON1Yue9BKQ448uvdp3DX5wpUxQlsbsA0uNyAprfXZh5FGoIkZc11D+rgIgmafWubDboWrc+Mi6DuvOpcVbq4CLDsWt8ETA7JEUp8MtjqiVNeeZiefcjMt+FzLklZpSUOAcW8VEgpzqCOX3WeVb52posrXnMXTG8A1qYWUUJmlZz0Jln3rH2D8RBBEp0Oao7oROnIMrm5V10aZCyOMaSSelkTHTPlT7tFQxb34my5Y5KU4kAdv6G255SuuiTISt/qgHAz060iuQxwiW6Ssmu3CPFJYsSjReISAcUkKRLgSHIl49Cvvr+oHCXz5ib+WZAg/9ceN0S2uMQJThRS5IJwysDYci8QlwooHqq41g4DV+P/SYPOg6rTy2rPKR0zi3qpyrqJm0Rl0SznFkDdNIsEiwR1E9B9/hdcXww4Q5VScAAAAABJRU5ErkJggg==" alt="">
+                                    </div><img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAB3klEQVRYR+3Wy07CQBQG4P8Ud0KfwMQHkcveldKaYCKi0bjVRzFujZd4i9HC3iVtfBGNL1C6hWOGSIS2QzqdUlh01tPp1//MmSlhxQetuA8FULdCRYJFgroJ6D6/Enuw7DZtEF0CGBqMM7/e/Zh82NKBpmsdMHAPoCRQTPgKat3NlQCGcWMg4ydodDeWDjS9ZpuZ7ibJ/YGGDG4F9Z6zVKAMR8THfq33ON1Yue9BKQ448uvdp3DX5wpUxQlsbsA0uNyAprfXZh5FGoIkZc11D+rgIgmafWubDboWrc+Mi6DuvOpcVbq4CLDsWt8ETA7JEUp8MtjqiVNeeZiefcjMt+FzLklZpSUOAcW8VEgpzqCOX3WeVb52posrXnMXTG8A1qYWUUJmlZz0Jln3rH2D8RBBEp0Oao7oROnIMrm5V10aZCyOMaSSelkTHTPlT7tFQxb34my5Y5KU4kAdv6G255SuuiTISt/qgHAz060iuQxwiW6Ssmu3CPFJYsSjReISAcUkKRLgSHIl49Cvvr+oHCXz5ib+WZAg/9ceN0S2uMQJThRS5IJwysDYci8QlwooHqq41g4DV+P/SYPOg6rTy2rPKR0zi3qpyrqJm0Rl0SznFkDdNIsEiwR1E9B9/hdcXww4Q5VScAAAAABJRU5ErkJggg=="
+                                        alt="">
                                 </div>
                                 <div class="term-box">
                                     <div class="fz14">
                                         <font style="vertical-align: inherit;">
                                             <font style="vertical-align: inherit;">Giới hạn cập nhật：2/20</font>
                                         </font>
-                                    </div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAB3klEQVRYR+3Wy07CQBQG4P8Ud0KfwMQHkcveldKaYCKi0bjVRzFujZd4i9HC3iVtfBGNL1C6hWOGSIS2QzqdUlh01tPp1//MmSlhxQetuA8FULdCRYJFgroJ6D6/Enuw7DZtEF0CGBqMM7/e/Zh82NKBpmsdMHAPoCRQTPgKat3NlQCGcWMg4ydodDeWDjS9ZpuZ7ibJ/YGGDG4F9Z6zVKAMR8THfq33ON1Yue9BKQ448uvdp3DX5wpUxQlsbsA0uNyAprfXZh5FGoIkZc11D+rgIgmafWubDboWrc+Mi6DuvOpcVbq4CLDsWt8ETA7JEUp8MtjqiVNeeZiefcjMt+FzLklZpSUOAcW8VEgpzqCOX3WeVb52posrXnMXTG8A1qYWUUJmlZz0Jln3rH2D8RBBEp0Oao7oROnIMrm5V10aZCyOMaSSelkTHTPlT7tFQxb34my5Y5KU4kAdv6G255SuuiTISt/qgHAz060iuQxwiW6Ssmu3CPFJYsSjReISAcUkKRLgSHIl49Cvvr+oHCXz5ib+WZAg/9ceN0S2uMQJThRS5IJwysDYci8QlwooHqq41g4DV+P/SYPOg6rTy2rPKR0zi3qpyrqJm0Rl0SznFkDdNIsEiwR1E9B9/hdcXww4Q5VScAAAAABJRU5ErkJggg==" alt="">
+                                    </div><img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAB3klEQVRYR+3Wy07CQBQG4P8Ud0KfwMQHkcveldKaYCKi0bjVRzFujZd4i9HC3iVtfBGNL1C6hWOGSIS2QzqdUlh01tPp1//MmSlhxQetuA8FULdCRYJFgroJ6D6/Enuw7DZtEF0CGBqMM7/e/Zh82NKBpmsdMHAPoCRQTPgKat3NlQCGcWMg4ydodDeWDjS9ZpuZ7ibJ/YGGDG4F9Z6zVKAMR8THfq33ON1Yue9BKQ448uvdp3DX5wpUxQlsbsA0uNyAprfXZh5FGoIkZc11D+rgIgmafWubDboWrc+Mi6DuvOpcVbq4CLDsWt8ETA7JEUp8MtjqiVNeeZiefcjMt+FzLklZpSUOAcW8VEgpzqCOX3WeVb52posrXnMXTG8A1qYWUUJmlZz0Jln3rH2D8RBBEp0Oao7oROnIMrm5V10aZCyOMaSSelkTHTPlT7tFQxb34my5Y5KU4kAdv6G255SuuiTISt/qgHAz060iuQxwiW6Ssmu3CPFJYsSjReISAcUkKRLgSHIl49Cvvr+oHCXz5ib+WZAg/9ceN0S2uMQJThRS5IJwysDYci8QlwooHqq41g4DV+P/SYPOg6rTy2rPKR0zi3qpyrqJm0Rl0SznFkDdNIsEiwR1E9B9/hdcXww4Q5VScAAAAABJRU5ErkJggg=="
+                                        alt="">
                                 </div>
                                 <div class="term-box">
                                     <div class="fz14">
                                         <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">Số tiền còn lại：10457 VND</font>
+                                            <font style="vertical-align: inherit;">Số tiền còn
+                                                lại：<?php echo number_format($balance); ?>VND</font>
                                         </font>
-                                    </div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAB3klEQVRYR+3Wy07CQBQG4P8Ud0KfwMQHkcveldKaYCKi0bjVRzFujZd4i9HC3iVtfBGNL1C6hWOGSIS2QzqdUlh01tPp1//MmSlhxQetuA8FULdCRYJFgroJ6D6/Enuw7DZtEF0CGBqMM7/e/Zh82NKBpmsdMHAPoCRQTPgKat3NlQCGcWMg4ydodDeWDjS9ZpuZ7ibJ/YGGDG4F9Z6zVKAMR8THfq33ON1Yue9BKQ448uvdp3DX5wpUxQlsbsA0uNyAprfXZh5FGoIkZc11D+rgIgmafWubDboWrc+Mi6DuvOpcVbq4CLDsWt8ETA7JEUp8MtjqiVNeeZiefcjMt+FzLklZpSUOAcW8VEgpzqCOX3WeVb52posrXnMXTG8A1qYWUUJmlZz0Jln3rH2D8RBBEp0Oao7oROnIMrm5V10aZCyOMaSSelkTHTPlT7tFQxb34my5Y5KU4kAdv6G255SuuiTISt/qgHAz060iuQxwiW6Ssmu3CPFJYsSjReISAcUkKRLgSHIl49Cvvr+oHCXz5ib+WZAg/9ceN0S2uMQJThRS5IJwysDYci8QlwooHqq41g4DV+P/SYPOg6rTy2rPKR0zi3qpyrqJm0Rl0SznFkDdNIsEiwR1E9B9/hdcXww4Q5VScAAAAABJRU5ErkJggg==" alt="">
+                                    </div><img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAB3klEQVRYR+3Wy07CQBQG4P8Ud0KfwMQHkcveldKaYCKi0bjVRzFujZd4i9HC3iVtfBGNL1C6hWOGSIS2QzqdUlh01tPp1//MmSlhxQetuA8FULdCRYJFgroJ6D6/Enuw7DZtEF0CGBqMM7/e/Zh82NKBpmsdMHAPoCRQTPgKat3NlQCGcWMg4ydodDeWDjS9ZpuZ7ibJ/YGGDG4F9Z6zVKAMR8THfq33ON1Yue9BKQ448uvdp3DX5wpUxQlsbsA0uNyAprfXZh5FGoIkZc11D+rgIgmafWubDboWrc+Mi6DuvOpcVbq4CLDsWt8ETA7JEUp8MtjqiVNeeZiefcjMt+FzLklZpSUOAcW8VEgpzqCOX3WeVb52posrXnMXTG8A1qYWUUJmlZz0Jln3rH2D8RBBEp0Oao7oROnIMrm5V10aZCyOMaSSelkTHTPlT7tFQxb34my5Y5KU4kAdv6G255SuuiTISt/qgHAz060iuQxwiW6Ssmu3CPFJYsSjReISAcUkKRLgSHIl49Cvvr+oHCXz5ib+WZAg/9ceN0S2uMQJThRS5IJwysDYci8QlwooHqq41g4DV+P/SYPOg6rTy2rPKR0zi3qpyrqJm0Rl0SznFkDdNIsEiwR1E9B9/hdcXww4Q5VScAAAAABJRU5ErkJggg=="
+                                        alt="">
                                 </div>
                             </div>
                             <div class="btn-box">
-                                <a href="./order.php" class="notAllow btn" style="line-height: 30px;">
-                                    <div>
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">Nhận ngay</font>
-                                        </font>
-                                    </div>
-                                </a>
+                                <form method="POST" action="" style="  width: 100%;  ">
+                                    <input type="text" name="order" hidden>
+
+                                    <button type="submit" class="notAllow btn"
+                                        style="line-height: 30px; width: 100%;  ">
+                                        <div>
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">Nhận ngay</font>
+                                            </font>
+                                        </div>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                         <div class="footer-box">

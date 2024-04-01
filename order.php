@@ -1,3 +1,9 @@
+<?php session_start();
+if (isset($_SESSION['phone'])) {
+} else {
+    echo '<script>window.location.href = "./login.php";</script>';
+}; ?>
+<?php include_once('./server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 

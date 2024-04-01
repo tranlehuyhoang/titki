@@ -1,3 +1,18 @@
+<?php session_start();
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
+    // Xóa session
+    session_unset();
+    session_destroy();
+
+    // Chuyển hướng đến trang đăng nhập
+    header("Location: ./login.php");
+    exit();
+}
+if (isset($_SESSION['phone'])) {
+} else {
+    echo '<script>window.location.href = "./login.php";</script>';
+}; ?>
+<?php include_once('./server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,10 +58,15 @@
                         <!---->
                     </i>
                 </a>
-            </div><a href="./login.php" class="van-button van-button--info van-button--normal"
-                style="width: 80%; margin-top: 65px; border-radius: 15px;">
-                <div class="van-button__content"><span class="van-button__text">Đăng xuất</span></div>
-            </a>
+            </div>
+            <form method="POST" action="">
+                <button class="van-button van-button--info van-button--normal"
+                    style="width: 80%; margin-top: 65px; border-radius: 15px;" name="logout">
+                    <div class="van-button__content">
+                        <span class="van-button__text">Đăng xuất</span>
+                    </div>
+                </button>
+            </form>
         </div>
         <div></div>
     </div>

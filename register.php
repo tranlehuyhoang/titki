@@ -1,3 +1,7 @@
+<?php session_start();
+if (isset($_SESSION['phone'])) {
+} else {
+}; ?>
 <?php include_once('./server.php') ?>
 
 <!DOCTYPE html>
